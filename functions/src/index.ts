@@ -20,3 +20,18 @@ export const startCrawler = functions
     await crawler.start();
     response.send("End Crawler");
   });
+
+// create scheuler
+export const scheduleFunctionCronTab = functions
+  .runWith({
+    memory: "2GB",
+    timeoutSeconds: 120,
+  })
+  .pubsub.schedule("* 3 * * *")
+  .timeZone("America/Vancouver")
+  .onRun(async () => {
+    functions.logger.info("Start Crawler", { structuredData: true });
+    const crawler = new Crawler();
+    await crawler.start();
+    return null;
+  });
