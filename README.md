@@ -1,8 +1,6 @@
 # subscription-servie-cloud
 ---
 
-# Project Name (Build Up Firebase)
-
 This project is a cloud-based serverless application built on Firebase for web scraping and automation tasks. Below is a brief overview of the project and its functionalities.
 
 ## Project Overview
